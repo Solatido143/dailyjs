@@ -11,3 +11,17 @@ function simpleArithmetic() {
 }
 
 // document.getElementById('text').innerHTML = simpleArithmetic();
+
+function oddEven(x) {
+	if (isNaN(x)) {
+		return "Not a proper integer";
+	}
+
+	if (x % 2 === 0) {
+		return "Even";
+	} else {
+		return "Odd";
+	}
+}
+
+document.getElementById("text").innerHTML = oddEven(1332);
