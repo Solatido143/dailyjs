@@ -4,4 +4,10 @@ function print_HelloWorld() {
     console.log(text);
 }
 
-print_HelloWorld();
+function simpleArithmetic() {
+    let x = 5;
+    let y = 3;
+    return x * y;
+}
+
+// document.getElementById('text').innerHTML = simpleArithmetic();
