@@ -31,3 +31,22 @@ function arraySum() {
 	}
 	console.log("Sum:", sum);
 }
+
+function FizzBuzz() {
+    for (let FB = 1; FB <= 100; FB++) {
+        if (FB % 3 === 0 && FB % 5 === 0) {
+            console.log('FizzBuzz');
+            continue;
+        }
+        if (FB % 3 === 0) {
+            console.log('Fizz');
+            continue;
+        }
+        if (FB % 5 === 0) {
+            console.log('Buzz');
+            continue;
+        }
+        console.log(FB);
+    }
+}
+FizzBuzz()
