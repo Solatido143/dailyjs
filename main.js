@@ -65,5 +65,3 @@ function arrayLargest() {
 	}
 	console.log(werLargest);
 }
-
-arrayLargest();
