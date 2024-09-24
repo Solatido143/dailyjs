@@ -55,4 +55,15 @@ function Factorial(num) {
 	return facto;
 }
 
-Factorial()
+function arrayLargest() {
+	const numbers = [34, 67, 23, 21, 12, 77, 43];
+	let werLargest = numbers[0];
+	for (let i = 0; i < numbers.length; i++) {
+		if(numbers[i] > werLargest) {
+			werLargest = numbers[i];
+		}
+	}
+	console.log(werLargest);
+}
+
+arrayLargest();
