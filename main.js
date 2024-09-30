@@ -94,3 +94,21 @@ function sumOfDigits(num) {
 	}
 	return sum;
 }
+
+function countVowels(str) {
+	const vowels = ["a", "e", "i", "o", "u"];
+	let counter = 0;
+	let string = str.toLowerCase();
+
+	for (let letter = 0; letter < string.length; letter++) {
+		for (let vowel = 0; vowel < vowels.length; vowel++) {
+			if (string[letter] === vowels[vowel]) {
+				counter++;
+			}
+		}
+	}
+
+	return counter;
+}
+
+console.log(countVowels('Sabihin mo na'));
