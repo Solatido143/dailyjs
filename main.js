@@ -108,3 +108,14 @@ function countVowels(str) {
 
 	return counter;
 }
+
+function stringCapitalization(str) {
+	const strArray = str.split(" ");
+	let strCaps = "";
+	for (let word = 0; word < strArray.length; word++) {
+		const words = strArray[word];
+
+		strCaps += words.charAt(0).toUpperCase() + words.slice(1) + " ";
+	}
+	return strCaps;
+}
