@@ -85,3 +85,12 @@ function Palindrome(string) {
 		return false;
 	}
 }
+
+function sumOfDigits(num) {
+	let numbers = num.toString().split("");
+	let sum = 0;
+	for (let i = 0; i < numbers.length; i++) {
+		sum += parseInt(numbers[i]);
+	}
+	return sum;
+}
