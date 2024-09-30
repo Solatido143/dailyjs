@@ -75,3 +75,13 @@ function reverseAString(str) {
 	}
 	return reversed;
 }
+
+function Palindrome(string) {
+	let toLower = string.toLowerCase().replace(/[^a-z0-9]/g, "");
+	const pal = toLower.split("").reverse().join("");
+	if (pal === toLower) {
+		return true;
+	} else {
+		return false;
+	}
+}
