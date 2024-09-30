@@ -101,14 +101,10 @@ function countVowels(str) {
 	let string = str.toLowerCase();
 
 	for (let letter = 0; letter < string.length; letter++) {
-		for (let vowel = 0; vowel < vowels.length; vowel++) {
-			if (string[letter] === vowels[vowel]) {
-				counter++;
-			}
+		if (vowels.includes(string[letter])) {
+			counter++;
 		}
 	}
 
 	return counter;
 }
-
-console.log(countVowels('Sabihin mo na'));
