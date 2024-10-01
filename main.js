@@ -120,8 +120,30 @@ function stringCapitalization(str) {
 	return strCaps;
 }
 
-function duplicateArray() {
-	let dupeArray = [1, 2, 2, 3];
-	const set = new Set(dupeArray);
+function duplicateArray(params) {
+	const set = new Set(params);
 	return Array.from(set);
 }
+
+function secondLargest(arr) {
+	// if (arr.length < 2) {
+	// 	return "There is no second largest number";
+	// }
+
+	const sortedArr = duplicateArray(arr).sort((a, b) => a - b);
+	let max = -Infinity;
+	let secondLargest = -Infinity;
+
+	for (let i = 0; i < sortedArr.length; i++) {
+		if (sortedArr[i] > max) {
+			secondLargest = max;
+			max = sortedArr[i];
+			console.log("secondLargest: " + secondLargest);
+			console.log("max: " + max);
+		}
+	}
+
+	return secondLargest === -Infinity ? "There is no second largest number" : secondLargest;
+}
+
+console.log(secondLargest([-23, -2, 0, 12]));
