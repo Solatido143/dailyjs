@@ -119,3 +119,9 @@ function stringCapitalization(str) {
 	}
 	return strCaps;
 }
+
+function duplicateArray() {
+	let dupeArray = [1, 2, 2, 3];
+	const set = new Set(dupeArray);
+	return Array.from(set);
+}
