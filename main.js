@@ -146,4 +146,19 @@ function secondLargest(arr) {
 	return secondLargest === -Infinity ? "There is no second largest number" : secondLargest;
 }
 
-console.log(secondLargest([-23, -2, 0, 12]));
+function objectMerge() {
+	let object1 = {
+		id: 1,
+		name: "John",
+		number: "01234567890",
+	};
+	let object2 = {
+		number: "09987654321",
+		surname: "Hernandez",
+	};
+	for (let key in object2) {
+		object1[key] = object2[key];
+	}
+	return object1;
+}
+console.log(objectMerge());
