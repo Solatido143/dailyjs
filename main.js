@@ -193,3 +193,23 @@ function sumOfRange(num1, num2) {
 	}
 	return range;
 }
+
+function isPrime(number) {
+
+	let isPrimeNumber = "";
+
+	if (number <= 1) {
+		return number + " " + "is not a Prime number";
+	} else if (number === 2) {
+		return number + " " + "a Prime number";
+	} else {
+		for (let i = 2; i <= number / 2; i++) {
+			if (number % i == 0) {
+				isPrimeNumber = number + " " + "is not a Prime number";
+				return isPrimeNumber;
+			}
+		}
+		isPrimeNumber = number + " is a Prime number";
+	}
+	return isPrimeNumber;
+}
