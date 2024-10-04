@@ -33,23 +33,23 @@ function arraySum() {
 }
 
 function FizzBuzz() {
-    for (let FB = 1; FB <= 100; FB++) {
-        if (FB % 3 === 0 && FB % 5 === 0) {
-            console.log('FizzBuzz')
-        } else if(FB % 3 === 0) {
-            console.log('Fizz');
-        } else if (FB % 5 === 0) {
-            console.log('Buzz');
-        } else {
-            console.log(FB);
-        }
-    }
+	for (let FB = 1; FB <= 100; FB++) {
+		if (FB % 3 === 0 && FB % 5 === 0) {
+			console.log("FizzBuzz");
+		} else if (FB % 3 === 0) {
+			console.log("Fizz");
+		} else if (FB % 5 === 0) {
+			console.log("Buzz");
+		} else {
+			console.log(FB);
+		}
+	}
 }
 
 function Factorial(num) {
 	let facto = 1;
 	for (let i = 1; i <= num; i++) {
-		facto *= i
+		facto *= i;
 	}
 	console.log(facto);
 	return facto;
@@ -59,7 +59,7 @@ function arrayLargest() {
 	const numbers = [34, 67, 23, 21, 12, 77, 43];
 	let werLargest = numbers[0];
 	for (let i = 0; i < numbers.length; i++) {
-		if(numbers[i] > werLargest) {
+		if (numbers[i] > werLargest) {
 			werLargest = numbers[i];
 		}
 	}
@@ -67,11 +67,10 @@ function arrayLargest() {
 }
 
 function reverseAString(str) {
-	let reversed = '';
+	let reversed = "";
 
 	for (let i = str.length - 1; i >= 0; i--) {
 		reversed += str[i];
-		
 	}
 	return reversed;
 }
@@ -161,4 +160,17 @@ function objectMerge() {
 	}
 	return object1;
 }
-console.log(objectMerge());
+
+function groupAnagrams() {
+	let arrayAnagrams = ["eat", "tea", "tan", "ate", "nat", "bat"];
+	let anagramsKeyMap = {};
+	for (let index = 0; index < arrayAnagrams.length; index++) {
+		let sortedKey = arrayAnagrams[index].split("").sort().join("");
+		if (anagramsKeyMap[sortedKey]) {
+			anagramsKeyMap[sortedKey].push(arrayAnagrams[index]);
+		} else {
+			anagramsKeyMap[sortedKey] = [arrayAnagrams[index]];
+		}
+	}
+	return Object.values(anagramsKeyMap);
+}
