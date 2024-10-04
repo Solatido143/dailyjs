@@ -1,3 +1,6 @@
+let alphabet = "abcdefghijklmnopqrstuvwxyz";
+let sentence = "The quick brown fox jumped over the lazy dog."
+
 function print_HelloWorld() {
 	let text = "Hello, World";
 	document.getElementById("text").innerHTML = text;
