@@ -1,5 +1,5 @@
 let alphabet = "abcdefghijklmnopqrstuvwxyz";
-let sentence = "The quick brown fox jumped over the lazy dog."
+let sentence = "The quick brown fox jumped over the lazy dog.";
 
 function print_HelloWorld() {
 	let text = "Hello, World";
@@ -198,7 +198,6 @@ function sumOfRange(num1, num2) {
 }
 
 function isPrime(number) {
-
 	let isPrimeNumber = "";
 
 	if (number <= 1) {
@@ -216,3 +215,31 @@ function isPrime(number) {
 	}
 	return isPrimeNumber;
 }
+
+//gpt implementation
+function caesarCipher(str, shift) {
+	let result = "";
+
+	for (let i = 0; i < str.length; i++) {
+		let char = str[i];
+
+		// Check if the character is a lowercase letter
+		if (char >= "a" && char <= "z") {
+			let newCharCode = ((char.charCodeAt(0) - 97 + shift) % 26) + 97;
+			result += String.fromCharCode(newCharCode);
+		}
+		// Check if the character is an uppercase letter
+		else if (char >= "A" && char <= "Z") {
+			let newCharCode = ((char.charCodeAt(0) - 65 + shift) % 26) + 65;
+			result += String.fromCharCode(newCharCode);
+		} else {
+			// If it's not a letter, just add it unchanged
+			result += char;
+		}
+	}
+
+	return result;
+}
+
+// Example usage
+console.log(caesarCipher("I love you!", 2)); // Output: "Jgnnq, Yqtnf!"
