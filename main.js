@@ -241,5 +241,19 @@ function caesarCipher(str, shift) {
 	return result;
 }
 
-// Example usage
-console.log(caesarCipher("I love you!", 2)); // Output: "Jgnnq, Yqtnf!"
+function factorialRecursive(int) {
+	if (int === 0 || int === 1) {
+		return 1;
+	}
+	return int * factorialRecursive(int - 1);
+}
+
+function fibonacci(n) {
+	if (n === 0) {
+		return 0;
+	}
+	if (n === 1) {
+		return 1;
+	}
+	return fibonacci(n - 1) + fibonacci(n - 2);
+}
