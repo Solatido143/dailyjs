@@ -387,18 +387,23 @@ function isPalindrome(phrase) {
 // console.log(isPalindrome("A man, a plan, a canal: Panama"));
 
 function removeVowels(inputString) {
-	const vowels = ["a","e","i","o","u","a","e","i","o","u"];
-	let result = "";
+	// const vowels = ["a","e","i","o","u","a","e","i","o","u"];
+	// let result = "";
 
-	for (let char of inputString) {
-		if (!vowels.includes(char)) {
-			result += char;
-		}
-	}
+	// for (let char of inputString) {
+	// 	if (!vowels.includes(char)) {
+	// 		result += char;
+	// 	}
+	// }
 
-	return result;
+	// return result;
+
+	return inputString.replace(/[aeiou]/gi, "");
 }
 
-// for (let char of inputString) {}
 
 console.log(removeVowels("Hello, world"));
+
+function name(params) {
+	
+}
