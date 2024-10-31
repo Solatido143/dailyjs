@@ -269,4 +269,136 @@ function flatten(arr) {
 	}
 	return result;
 }
-console.log(flatten([1, [2, 3], [4, [5]]]));
+// console.log(flatten([1, [2, 3], [4, [5]]]));
+
+function power(x, n) {
+	if (n === 0) {
+		return 0;
+	}
+	if (n === 1) {
+		return x;
+	}
+	return x * power(x, n - 1);
+}
+// console.log(power(5, 3));
+
+function binarySearch(arr, target) {
+	let low = 0;
+	let high = arr.length - 1;
+
+	while (low <= high) {
+		let mid = Math.floor((low + high) / 2);
+
+		if (arr[mid] === target) {
+			return mid;
+		} else if (arr[mid] < target) {
+			low = mid + 1;
+		} else {
+			high = mid - 1;
+		}
+	}
+	return '"' + target + '" do not exist';
+}
+// console.log(binarySearch([1, 2, 3, 4, 5, 6], 3.5));
+
+function rotateArr(arr, k) {
+	k = k % arr.length;
+	if (k === 0) {
+		return arr;
+	}
+
+	// endSlice = arr.slice(0, k + 1);
+	// startSlice = arr.slice(arr.length - k);
+
+	let startSlice = arr.slice(arr.length - k);
+	let endSlice = arr.slice(0, arr.length - k);
+
+	return [...startSlice, ...endSlice];
+}
+// console.log(rotateArr([1, 2, 3, 4, 5], 2));
+
+function removeDuplicates(nums) {
+	if (nums.length === 0) return 0;
+
+	let i = 0;
+
+	for (let j = 1; j < nums.length; j++) {
+		if (nums[j] !== nums[i]) {
+			i++; // Move pointer i to the next unique position
+			nums[i] = nums[j]; // Move the next unique element to this position
+		}
+	}
+
+	return i + 1;
+}
+
+// let nums = [1, 1, 2, 2, 3, 3, 4];
+// let newLength = removeDuplicates(nums);
+// console.log(newLength); // Output: 4
+// console.log(nums); // Output: [1, 2, 3, 4]
+
+
+function intersection(arr1, arr2) {
+    const setA = new Set(arr1);
+    const intersectionSet = new Set();
+    for (let i = 0; i < arr2.length; i++) {
+        if (setA.has(arr2[i])) {
+            intersectionSet.add(arr2[i]);
+        }
+    }
+    return Array.from(intersectionSet);
+}
+
+// console.log(intersection([1, 2, 2, 3], [2, 3, 4]));
+
+const validateEmail = (email) => {
+	return Boolean(
+		email.match(
+			/^(?:(?:(?:"(?:\\[^\r\n]|[^\\"])*")|(?:[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*))@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)\.)+[a-zA-Z]{2,}|(?:\[(?:(?:[0-9]{1,3}\.){3}[0-9]{1,3}|IPv6:[0-9a-fA-F:.]+)\])))$/
+		)
+	);
+};
+
+const email = "example@example.com";
+// if (validateEmail(email)) {
+// 	console.log(email + " is valid.");
+// } else {
+// 	console.log(email + " is not valid");
+// }
+
+const countWords = (sentence) => {
+	let words = sentence.trim().split(/\s+/);
+	return words.length;
+};
+// console.log(countWords("  Move the next unique element to this position  "));
+
+function isPalindrome(phrase) {
+	let cleanedPhrase = phrase.replace(/[^a-z0-9]/gi, "").toLowerCase();
+
+	let reversePhrase = cleanedPhrase.split("").reverse().join("");
+
+	if (cleanedPhrase === reversePhrase) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+// console.log(isPalindrome("A man, a plan, a canal: Panama"));
+
+function removeVowels(inputString) {
+	const vowels = ["a","e","i","o","u","a","e","i","o","u"];
+	let result = "";
+
+	for (let char of inputString) {
+		if (!vowels.includes(char)) {
+			result += char;
+		}
+	}
+
+	return result;
+}
+
+// for (let char of inputString) {}
+
+console.log(removeVowels("Hello, world"));
