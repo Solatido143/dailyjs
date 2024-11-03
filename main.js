@@ -358,7 +358,7 @@ const validateEmail = (email) => {
 	);
 };
 
-const email = "example@example.com";
+// const email = "example@example.com";
 // if (validateEmail(email)) {
 // 	console.log(email + " is valid.");
 // } else {
@@ -453,3 +453,37 @@ var deepClone = function(obj) {
 // const original = {a: 1, b: {c: 2, d: {e: 3}}};
 // const cloned = deepClone(original);
 // console.log(cloned);
+
+function frequencyCounter(array) {
+	let frequency = {};
+	array.forEach(num => {
+		if (frequency[num]) {
+			frequency[num]++;
+		} else {
+			frequency[num] = 1;
+		}
+	});
+
+	return frequency;
+}
+
+// console.log(frequencyCounter([1, 2, 2, 3, 3, 3]));
+
+function findAllDuplicates(arr) {
+	const frequencyCounter = {};
+	const duplicates = [];
+
+	for (const num of arr) {
+		frequencyCounter[num] = (frequencyCounter[num] || 0) + 1;
+	}
+
+	for (const num in frequencyCounter) {
+		if (frequencyCounter[num] > 1) {
+			duplicates.push(Number(num));
+		}
+	}
+
+	return duplicates;
+}
+
+// console.log(findAllDuplicates([4, 3, 2, 7, 8, 2, 3, 1]));
