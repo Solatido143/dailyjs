@@ -297,9 +297,9 @@ function binarySearch(arr, target) {
 			high = mid - 1;
 		}
 	}
-	return '"' + target + '" do not exist';
+	return -1;
 }
-// console.log(binarySearch([1, 2, 3, 4, 5, 6], 3.5));
+// console.log(binarySearch([1, 2, 3, 4, 5, 6], 7));
 
 function rotateArr(arr, k) {
 	k = k % arr.length;
@@ -337,16 +337,15 @@ function removeDuplicates(nums) {
 // console.log(newLength); // Output: 4
 // console.log(nums); // Output: [1, 2, 3, 4]
 
-
 function intersection(arr1, arr2) {
-    const setA = new Set(arr1);
-    const intersectionSet = new Set();
-    for (let i = 0; i < arr2.length; i++) {
-        if (setA.has(arr2[i])) {
-            intersectionSet.add(arr2[i]);
-        }
-    }
-    return Array.from(intersectionSet);
+	const setA = new Set(arr1);
+	const intersectionSet = new Set();
+	for (let i = 0; i < arr2.length; i++) {
+		if (setA.has(arr2[i])) {
+			intersectionSet.add(arr2[i]);
+		}
+	}
+	return Array.from(intersectionSet);
 }
 
 // console.log(intersection([1, 2, 2, 3], [2, 3, 4]));
@@ -401,9 +400,56 @@ function removeVowels(inputString) {
 	return inputString.replace(/[aeiou]/gi, "");
 }
 
+// console.log(removeVowels("Hello, world"));
 
-console.log(removeVowels("Hello, world"));
+function countOccurrences(inputString) {}
 
-function name(params) {
-	
+var rotateString = function (s, goal) {
+	if (s.length !== goal.length) {
+		return false;
+	}
+
+	s += s;
+
+	if (s.includes(goal)) {
+		return true;
+	} else {
+		return false;
+	}
+};
+
+// let s = "abcde";
+// let goal = "abced";
+// console.log(rotateString(s, goal))
+
+function isPrimitive(val) {
+	return val === null || (typeof val !== "object" && typeof val !== "function");
 }
+
+var deepClone = function(obj) {
+	if (isPrimitive(obj)) {
+		return obj;
+	} else if (Array.isArray(obj)) {
+		//array
+		const copy = [];
+		for (let item of obj) {
+			copy.push(deepClone(item));
+		}
+		return copy;
+	} else {
+		// object
+		const copy = {};
+		for (let key in obj) {
+			console.log(key);
+			console.log(obj);
+			if (obj.hasOwnProperty(key)) {
+				copy[key] = deepClone(obj[key]);
+			}
+		}
+		return copy;
+	}
+};
+
+// const original = {a: 1, b: {c: 2, d: {e: 3}}};
+// const cloned = deepClone(original);
+// console.log(cloned);
