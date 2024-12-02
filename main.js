@@ -487,3 +487,23 @@ function findAllDuplicates(arr) {
 }
 
 // console.log(findAllDuplicates([4, 3, 2, 7, 8, 2, 3, 1]));
+
+function fizzBuzz(n) {
+    let fizzbuzzarr = [];
+    for (i = 1; i <= n; i++){
+        if(i % 3 === 0 && i % 5 === 0) {
+            fizzbuzzarr.push("FizzBuzz")
+        }
+        else if (i % 5 === 0) {
+            fizzbuzzarr.push("Buzz");
+        }
+        else if (i % 3 === 0) {
+            fizzbuzzarr.push("Fizz");
+        }
+        else {
+            fizzbuzzarr.push(i);
+        }
+    }
+    return fizzbuzzarr;
+}
+//console.log(fizzBuzz(30));
