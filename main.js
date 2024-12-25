@@ -432,14 +432,14 @@ var deepClone = function(obj) {
 	} else if (Array.isArray(obj)) {
 		//array
 		const copy = [];
-		for (let item of obj) {
+		for (let item of obj) { //array
 			copy.push(deepClone(item));
 		}
 		return copy;
 	} else {
 		// object
 		const copy = {};
-		for (let key in obj) {
+		for (let key in obj) { //object
 			console.log(key);
 			console.log(obj);
 			if (obj.hasOwnProperty(key)) {
